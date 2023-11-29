@@ -4,13 +4,15 @@
     "description": "API-Manga feita por Ana Luiza para trabalho final de Back-End",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
-      "type": "git",
-      "url": "Manga-API back-end"
+        "type": "git",
+        "url": "Manga-API back-end"
     },
     "author": "Ana Luiza",
-    "license": "ISC"
-  }
-  
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}
