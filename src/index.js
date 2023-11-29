@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 const port = 3000
 
-mongoose.connect('mongodb+srv://meowkag:P8kICDFzx7Miqbvu@cluster0.irnoouy.mongodb.net/?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://meowkag:VqLhehDgAHUj1n9M@cluster0.irnoouy.mongodb.net/?retryWrites=true&w=majority');
 
 const Manga = mongoose.model('Manga', { 
     titulo: String, 
