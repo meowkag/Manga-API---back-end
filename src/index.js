@@ -29,6 +29,8 @@ app.put("/:id", async (req, res) => {
         autor: req.body.autor,
         genero: req.body.genero,
         volumes: req.body.volumes,
+    }, {
+        new: true
     })
     return res.send(manga)
 })
