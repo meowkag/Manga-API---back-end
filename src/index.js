@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 const app = express()
 app.use(express.json())
-const port = 3000
+const port = 3001
 
 mongoose.connect('mongodb+srv://meowkag:VqLhehDgAHUj1n9M@cluster0.irnoouy.mongodb.net/?retryWrites=true&w=majority');
 
@@ -12,7 +12,7 @@ const Manga = mongoose.model('Manga', {
     titulo: String, 
     autor: String,
     genero: String,
-    volumes: String,
+    volumes: Number,
 });    
 
 app.get('/', (req, res) => {
