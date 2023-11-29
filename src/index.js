@@ -18,6 +18,15 @@ app.get('/', (req, res) => {
     res.send("Olá Mundo")
 })
 
+app.post("/", (req, res) => {
+    const manga = new Manga({
+        titulo: req.body.titulo,
+        autor: req.body.autor,
+        genero: req.body.genero,
+        capitulos: req.body.capitulos,
+    })
+})
+
 app.listen(port, () => {
     console.log('Ta funcionando poggers')
 })
