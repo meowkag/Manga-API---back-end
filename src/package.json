@@ -13,6 +13,6 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ana Luiza Jorge Campos",
   "license": "ISC"
 }
