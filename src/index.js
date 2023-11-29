@@ -11,7 +11,7 @@ const Manga = mongoose.model('Manga', {
     titulo: String, 
     autor: String,
     genero: String,
-    capitulos: String,
+    volumes: String,
 });    
 
 app.get('/', (req, res) => {
@@ -23,7 +23,7 @@ app.post("/", async (req, res) => {
         titulo: req.body.titulo,
         autor: req.body.autor,
         genero: req.body.genero,
-        capitulos: req.body.capitulos,
+        volumes: req.body.volumes,
     })
     await manga.save()
     res.send(manga)
