@@ -23,6 +23,16 @@ app.delete("/:id", async(req, res) => {
     return res.send(manga)
 })
 
+app.put("/:id", async (req, res) => {
+    const manga = await Manga.findByIdAndUpdate(req.params.id, {
+        titulo: req.body.titulo,
+        autor: req.body.autor,
+        genero: req.body.genero,
+        volumes: req.body.volumes,
+    })
+    return res.send(manga)
+})
+
 app.post("/", async (req, res) => {
     const manga = new Manga({
         titulo: req.body.titulo,
