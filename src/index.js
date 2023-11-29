@@ -6,8 +6,6 @@ const app = express()
 app.use(express.json())
 const port = 3001
 
-mongoose.connect('mongodb+srv://meowkag:VqLhehDgAHUj1n9M@cluster0.irnoouy.mongodb.net/?retryWrites=true&w=majority');
-
 const Manga = mongoose.model('Manga', { 
     titulo: String, 
     autor: String,
@@ -15,8 +13,14 @@ const Manga = mongoose.model('Manga', {
     volumes: Number,
 });    
 
-app.get('/', (req, res) => {
-    res.send("Olá Mundo")
+app.get('/', async (req, res) => {
+    const manga = await Manga.find()
+    return res.send(manga)
+})
+
+app.delete("/:id", async(req, res) => {
+    const manga = await Manga.findByIdAndDelete(req.params.id)
+    return res.send(manga)
 })
 
 app.post("/", async (req, res) => {
@@ -27,9 +31,16 @@ app.post("/", async (req, res) => {
         volumes: req.body.volumes,
     })
     await manga.save()
-    res.send(manga)
+    return res.send(manga)
 })
 
-app.listen(port, () => {
-    console.log('Ta funcionando poggers')
+
+mongoose.connect(`mongodb+srv://meowkag:VqLhehDgAHUj1n9M@cluster0.irnoouy.mongodb.net/?retryWrites=true&w=majority`)
+.then(() => {
+    console.log('Banco de Dados conectado')
+    app.listen(port, ()=> {
+        console.log(`Servidor rodando`)
+    });
+}).catch((error) => {
+    console.log(error)
 })
