@@ -13,6 +13,7 @@ const Manga = mongoose.model('Manga', {
     volumes: Number,
 });    
 
+
 app.get('/', async (req, res) => {
     const manga = await Manga.find()
     return res.send(manga)
