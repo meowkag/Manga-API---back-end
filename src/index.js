@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 const app = express()
 app.use(express.json())
-const port = 3005
+const port = 1105
 
 const Manga = mongoose.model('Manga', { 
     titulo: String, 
